@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Button } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome";
 import Svg, {Path} from 'react-native-svg';
-
 class SignUpScreen extends Component {
   constructor(props) {
     super(props);
@@ -79,7 +78,7 @@ class SignUpScreen extends Component {
         />
         
         </View>
-        <TouchableOpacity style={styles.button} onPress={this.handleRegistration}>
+        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('MainStackNavigator', {screen:  'Home'})}>
           <Text style={styles.buttonText1}>Register</Text>
         </TouchableOpacity>
       </View>
@@ -92,7 +91,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-   
     alignItems: 'center',
   },
   arrowContainer:{

@@ -1,14 +1,10 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import AppNavigator from './screens/AppNavigator';
-
-import { createAppContainer } from 'react-navigation';
-
-
-const AppContainer = createAppContainer(AppNavigator);
+import * as React from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigatorStack from './screens/AppNavigator';
 
 export default function App() {
-  return <AppContainer />;
+  return <NavigationContainer>{<AppNavigatorStack/>}</NavigationContainer>
 }
 
 const styles = StyleSheet.create({
