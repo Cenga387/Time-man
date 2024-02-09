@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Component } from 'react'
 import { View, Text, FlatList } from 'react-native';
 
-class HomeScreen extends Component {
+export default function HomeScreen() {
   state = {
     priorityTasks: [
       { id: '1', task: 'Task 2 for the day' },
@@ -16,7 +16,7 @@ class HomeScreen extends Component {
     ],
   };
 
-  render() {
+  
     const { priorityTasks, dailyTasks } = this.state;
 
     return (
@@ -45,6 +45,6 @@ class HomeScreen extends Component {
       </View>
     );
   }
-}
 
-export default HomeScreen;
+
+

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import AppNavigatorStack from './screens/AppNavigator';
+import AppNavigatorStack from './AppNavigator';
 
 export default function App() {
   return <NavigationContainer>{<AppNavigatorStack/>}</NavigationContainer>
