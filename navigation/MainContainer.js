@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import AddTaskScreen from './screens/AddTaskScreen';
-import SettingsScreen from './screens/SettingsScreen';
+import SchoolScreen from './screens/SchoolScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -45,11 +45,11 @@ const MainContainer = () => {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="School"
+        component={SchoolScreen}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => <Icon name="cog" size={size} color={color} />,
+          tabBarIcon: ({ color, size }) => <Icon name="school" size={size} color={color} />,
         }}
       />
       <Tab.Screen

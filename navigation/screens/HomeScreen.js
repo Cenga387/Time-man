@@ -1,9 +1,24 @@
 import * as React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import CardLook from './TaskCards/CardLook.js';
 
 function HomeScreen() {
+  const [pressedTasks, setPressedTasks] = useState([]);
+
+  const handleTaskPress = (taskId) => {
+    // Toggle the pressed state for the task
+    setPressedTasks((prevPressedTasks) => {
+      if (prevPressedTasks.includes(taskId)) {
+        return prevPressedTasks.filter((id) => id !== taskId);
+      } else {
+        return [...prevPressedTasks, taskId];
+      }
+    });
+  };
+  
+  
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -19,25 +34,35 @@ function HomeScreen() {
       </View>
       <Text style={styles.title}>Daily Tasks</Text>
       <View>
-        <ScrollView>
-        <View style={styles.taskContainer1}>
-          <Text style={styles.taskTitle1}>Task 1</Text>
-        </View>
-        <View style={styles.taskContainer1}>
-          <Text style={styles.taskTitle1}>Task 1</Text>
-        </View>
-        <View style={styles.taskContainer1}>
-          <Text style={styles.taskTitle1}>Task 1</Text>
-        </View>
-        <View style={styles.taskContainer1}>
-          <Text style={styles.taskTitle1}>Task 1</Text>
-        </View>
-        <View style={styles.taskContainer1}>
-          <Text style={styles.taskTitle1}>Task 1</Text>
-        </View>
-        <View style={styles.taskContainer1}>
-          <Text style={styles.taskTitle1}>Task 1</Text>
-        </View>
+        <ScrollView style={styles.dailyTasksContainer}>
+        {[1, 2, 3, 4, 5, 6].map((taskId) => (
+               <TouchableOpacity
+               key={taskId}
+               onPress={() => handleTaskPress(taskId)}
+               style={[
+                 styles.taskContainer1,
+                 {
+                  borderColor: pressedTasks.includes(taskId) ? '#006EE9' : '#D3D3D3',
+                  justifyContent: pressedTasks.includes(taskId) ? 'center' : 'center',
+                },               ]}
+             >
+               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                 <Text
+                   style={[
+                     styles.taskTitle1,
+                     { color: pressedTasks.includes(taskId) ? '#006EE9' : 'black' },
+                   ]}
+                 >
+                   {'Task ' + taskId}
+                 </Text>
+                 <View style={styles.radioButton}>
+                 {pressedTasks.includes(taskId) && (
+                   <View style={styles.radioButtonFilled}></View>
+                 )}
+                 </View>
+               </View>
+             </TouchableOpacity>
+            ))}
         </ScrollView>
       </View>
       </ScrollView>
@@ -63,20 +88,39 @@ const styles = StyleSheet.create({
   height:{
     height: 320,
   },
-  
-  taskContainer1:{
+  dailyTasksContainer: {
+    marginBottom: 30
+  },
+  taskContainer1: {
     marginVertical: 10,
     width: '100%',
     height: 60,
-    borderWidth: 1,
     borderColor: '#D3D3D3',
-    justifyContent: 'center',
     borderRadius: 15,
+    borderWidth: 1,  
+  },
+  radioButton:{
+    width: 25,
+    height: 25,
+    borderRadius: 12.5,
+    borderWidth: 2,
+    marginLeft:'auto',
+    marginRight: 15,
+    borderColor: '#006EE9',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  radioButtonFilled: {
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    backgroundColor: '#006EE9',
   },
   taskTitle1: {
     fontSize: 20,
     fontWeight: 'bold',
     marginLeft: 10,
+    textAlignVertical: 'center',
   },
   
 });

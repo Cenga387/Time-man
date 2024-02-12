@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,  } from 'react-native';
 
-function TaskDetailsScreen ({ route }) {
-  // const task  = route.params;
-
+function TaskDetailsScreen () {
   return (
     <View>
       <Text>Task 1</Text>

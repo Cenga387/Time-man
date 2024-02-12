@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
-export default function CalendarScreen({navigation}) {
+export default function AddTaskScreen({navigation}) {
     return(
         <View>
             <Text

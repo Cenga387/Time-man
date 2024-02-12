@@ -37,6 +37,7 @@ class LoginScreen extends Component {
         </Svg>
 
         <Text style={styles.title1}>Login to your account</Text>
+        
         <View style={styles.emailContainer}>
         <Icon style={styles.iconEmail} name="envelope" size={20} color={'white'}/>
 
