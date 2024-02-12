@@ -21,7 +21,7 @@ function HomeScreen() {
   
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={styles.title}>Welcome -User-</Text>
       <Text style={styles.title2}>Your tasks for today</Text>
       <Text style={styles.title}>Priority Tasks</Text>
@@ -34,7 +34,7 @@ function HomeScreen() {
       </View>
       <Text style={styles.title}>Daily Tasks</Text>
       <View>
-        <ScrollView style={styles.dailyTasksContainer}>
+        <ScrollView style={styles.dailyTasksContainer} showsVerticalScrollIndicator={false}>
         {[1, 2, 3, 4, 5, 6].map((taskId) => (
                <TouchableOpacity
                key={taskId}
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    
   },
   title: {
     fontSize: 35,
