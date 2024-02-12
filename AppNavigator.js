@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SignUpScreen from './authScreens/SignUpScreen';
 import LoginScreen from './authScreens/LoginScreen';
 import MainContainer from './navigation/MainContainer';
+import TaskDetailsScreen from './navigation/screens/TaskCards/TaskDetailsScreen';
 
 const AuthStack = createStackNavigator();
 
@@ -30,6 +31,13 @@ function AppNavigatorStack() {
       <AppNavigator.Screen
         name="MainContainer"
         component={MainContainer}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppNavigator.Screen
+        name="Task Details"
+        component={TaskDetailsScreen}
         options={{
           headerShown: false,
         }}
