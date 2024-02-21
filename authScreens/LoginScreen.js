@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome";
 import Svg, {Path} from 'react-native-svg';
-import HomeScreen from '../navigation/screens/HomeScreen';
 
 class LoginScreen extends Component {
   constructor(props) {

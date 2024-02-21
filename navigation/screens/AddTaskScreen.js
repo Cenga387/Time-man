@@ -121,7 +121,7 @@ function AddTaskScreen() {
                     <TextInput
                         style={styles.taskTitle}
                         placeholder="Task title"
-                        onChangeText={(email) => this.setState({ email })}
+                        
                     />
                 </View>
                 <View style={styles.categoryContainer}>
@@ -159,7 +159,7 @@ function AddTaskScreen() {
                     <TextInput
                         style={styles.descriptionTitle}
                         placeholder="Description"
-                        onChangeText={(email) => this.setState({ email })}
+                        
                     />
                 </View>
                 <View style={styles.addTaskButtonContainer}>
