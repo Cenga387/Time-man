@@ -48,6 +48,7 @@ class SignUpScreen extends Component {
           style={styles.input}
           placeholder="Username"
           onChangeText={(username) => this.setState({ username })}
+          autoCapitalize="words" autoCorrect={false}
         />
         </View>
         <View style={styles.emailContainer}>
@@ -77,7 +78,6 @@ class SignUpScreen extends Component {
           secureTextEntry
           onChangeText={(confirmPassword) => this.setState({ confirmPassword })}
         />
-        
         </View>
         <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('MainContainer')}>
           <Text style={styles.buttonText1}>Register</Text>
